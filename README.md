@@ -1,32 +1,16 @@
-# Welcome to Remix!
+# ComiNoit Connection
 
-- [Remix Docs](https://remix.run/docs)
+A web interface for the Discord server [RSS but it's Discord](https://discord.gg/zaY7PTS).
 
-## Development
+## Features
 
-You will be running two processes during development:
+- Propose new comics at <https://url.com>
 
-- The Miniflare server (miniflare is a local environment for Cloudflare Workers)
-- The Remix development server
+## Planned Features
 
-```sh
-# in one tab, start the remix dev server
-$ npm run dev
+- Change your roles
 
-# in another, start the miniflare server
-$ npm start
-```
+## Contributors
 
-Open up [http://127.0.0.1:8787](http://127.0.0.1:8787) and you should be ready to go!
-
-If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
-
-## Deployment
-
-Use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler) to build and deploy your application to Cloudflare Workers. If you don't have it yet, follow [the installation guide](https://developers.cloudflare.com/workers/cli-wrangler/install-update) to get it setup. Be sure to [authenticate the CLI](https://developers.cloudflare.com/workers/cli-wrangler/authentication) as well.
-
-Once that's done, you should be able to deploy your app:
-
-```sh
-npm run deploy
-```
+- [mymoomin](https://github.com/mymoomin/): Most of the site
+- vanishing fluff tail: Site name
