@@ -1,0 +1,218 @@
+.preview {
+    margin: 40px auto;
+    max-width: 500px;
+    background-color: var(--background-primary);
+    --saturation-factor: 1;
+    border-radius: 10px;
+  }
+  
+  .message {
+    margin: 0;
+    margin-top: 1.0625rem;
+    min-height: 2.75rem;
+    padding-left: 72px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 48px !important;
+    position: relative;
+    word-wrap: break-word;
+    user-select: text;
+    flex: 0 0 auto;
+    outline: 0;
+  }
+  
+  .contents {
+    position: static;
+    margin: 0;
+    padding-left: 0;
+    text-indent: 0;
+  }
+  
+  .avatar {
+    position: absolute;
+    left: 16px;
+    margin-top: calc(4px - 0.125rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  
+  .header {
+    display: block;
+    position: relative;
+    line-height: 1.375rem;
+    min-height: 1.375rem;
+    color: var(--text-muted);
+  }
+  
+  .headerText {
+    margin-right: 0.25rem;
+  }
+  
+  .username {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+    color: var(--header-primary);
+    display: inline;
+    vertical-align: baseline;
+    position: relative;
+    overflow: hidden;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+  
+  .botTag {
+    height: 0.9375rem;
+    padding: 0 0.275rem;
+    margin-top: 0.075em;
+    border-radius: 0.1875rem;
+    margin-left: 0.25rem;
+    position: relative;
+    top: 0.1rem;
+    background: var(--brand-experiment);
+    color: #fff;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    vertical-align: top;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+    text-indent: 0;
+  }
+  
+  .botText {
+    line-height: 0.9375rem;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .timestamp {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    color: var(--text-muted);
+    vertical-align: baseline;
+    margin-left: 0.25rem;
+    display: inline-block;
+    height: 1.25rem;
+    cursor: default;
+    pointer-events: none;
+    font-weight: 500;
+  }
+  
+  .separator {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    display: inline-block;
+    font-style: normal;
+  }
+  
+  .messageContent {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    margin-left: -72px;
+    padding-left: 72px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 0;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: var(--text-normal);
+    font-weight: 400;
+  }
+  
+  .roleMention {
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
+    unicode-bidi: plaintext;
+    color: var(--brand-experiment-530);
+    background: var(--brand-experiment-15a);
+    position: relative;
+    -webkit-filter: saturate(var(--saturation-factor, 1));
+    filter: saturate(var(--saturation-factor, 1));
+  }
+  
+  .theme-dark .roleMention {
+    background: var(--brand-experiment-30a);
+    color: var(--brand-experiment-200);
+  }
+  
+  .preview .embedContainer {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 0.25rem;
+    text-indent: 0;
+    min-height: 0;
+    min-width: 0;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    position: relative;
+  }
+  
+  .embedContainer > * {
+    justify-self: start;
+    align-self: start;
+  }
+  
+  .embedWrapper {
+    border-left: 4px solid var(--background-tertiary);
+    background: var(--background-secondary);
+    position: relative;
+    display: grid;
+    max-width: 520px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    word-wrap: break-word;
+    user-select: text;
+    color: var(--text-normal);
+    font-weight: 400;
+  }
+  
+  .grid {
+    overflow: hidden;
+    padding: .5rem 1rem 1rem .75rem;
+    display: inline-grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+  
+  .embedCommon {
+    min-width: 0;
+    margin-top: 8px;
+    unicode-bidi: plaintext;
+    text-align: left;
+  }
+  
+  .embedTitle {
+    color: var(--header-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    grid-column: 1/1;
+  }
+  
+  .embedTitleLink {
+    color: var(--text-link);
+    word-break: break-word;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .embedDescription {
+    color: var(--text-normal);
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    white-space: pre-line;
+    grid-column: 1/1;
+  }
+  

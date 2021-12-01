@@ -1,0 +1,246 @@
+:root {
+    --desktop-font-size: 16px;
+    --mobile-font-size: 20px;
+    font-size: 100%;
+    --top-margin: 1rem;
+}
+
+:root {
+    box-sizing: initial;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+}
+
+main {
+    margin: var(--top-margin) auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    gap: clamp(50px, 8vw, 100px);
+    justify-items: center;
+}
+
+button {
+    background-color: var(--brand-experiment);
+    border: none;
+    border-radius: 2px;
+    color: var(--background-primary);
+    cursor: pointer;
+    display: block;
+    font-size: 22px; /* fallback */
+    font-size: var(--mobile-font-size);
+    font-weight: 500;
+    margin: 3px 0 0 0;
+    padding: 10px;
+    border-radius: 1em;
+    position: relative;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background-color: var(--brand-experiment-560);
+}
+
+button:active {
+    background-color: var(--brand-experiment-600);
+}
+
+button:disabled {
+    background-color: var(--disabled);
+}
+
+button::after {
+    transition: all 0.2s;
+    border-radius: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+/* .ready::after {
+    border-radius: 1em
+  } */
+
+.loading::after {
+    content: "Loading...";
+    transition: all 0.2s;
+    position: absolute;
+    background-color: var(--disabled);
+}
+
+.success::after {
+    content: "✔";
+    background-color: var(--success);
+}
+
+.failure::after {
+    content: "X";
+    background-color: var(--alert);
+}
+
+.center {
+    margin: 0 auto;
+}
+
+button#toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    padding: 0;
+    /* Display at the top right of the password section */
+    position: absolute;
+    top: -4px;
+    right: -2px;
+}
+
+.descriptor {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    color: var(--text-normal);
+}
+
+.panel {
+    max-width: 500px;
+    width: 100%;
+}
+
+.preview-position {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--top-margin));
+}
+
+h1 {
+    color: var(--header-primary);
+    border-bottom: 1px solid var(--header-primary);
+    font-size: 28px;
+    font-size: calc(2 * var(--desktop-font-size));
+    font-weight: 500;
+    margin: 0 0 40px 0;
+    padding: 0 0 5px 0;
+}
+
+input {
+    color: var(--text-normal);
+    background-color: var(--channeltextarea-background);
+    border: none;
+    border-radius: 1em;
+    font-size: 22px; /* fallback */
+    font-size: var(--mobile-font-size);
+    padding: 15px;
+    width: 90%; /* fallback */
+    width: calc(100% - 30px); /* full width minus padding */
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+    outline: solid 2px var(--alert);
+}
+
+label {
+    color: var(--text-normal);
+    display: block;
+    font-size: 20px;
+    font-size: var(--mobile-font-size);
+    font-weight: 500;
+    margin: 0 0 3px 0;
+}
+
+form section {
+    margin: 0 0 40px 0;
+    position: relative; /* for password toggle positioning */
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.subheading {
+    color: var(--header-primary);
+    border-bottom: 1px solid var(--header-primary);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 60px auto 40px auto;
+    max-width: 500px;
+    padding: 0 0 5px 0;
+}
+
+.required::after {
+    content: "*";
+    color: var(--alert);
+}
+
+.notransition {
+    transition: none;
+}
+
+@media (min-width: 450px) {
+    button {
+        font-size: 14px; /* fallback */
+        font-size: var(--desktop-font-size);
+    }
+    button#signin {
+        margin: 40px 0 0 0;
+    }
+    .descriptor {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 28px;
+        font-size: calc(2 * var(--desktop-font-size));
+        font-weight: 500;
+        margin: 0 0 40px 0;
+    }
+    input {
+        font-size: 14px; /* fallback */
+        font-size: var(--desktop-font-size);
+    }
+    label {
+        font-size: 14px; /* fallback */
+        font-size: var(--desktop-font-size);
+    }
+}
+
+@media (min-width: 800px) {
+    /* main {
+      margin: 50px;
+    } */
+}
+
+:root {
+    --alert: hsl(335, 90%, 40%);
+    --success: #70ce69;
+    --disabled: #ccc;
+    --header-primary: #c0a0f0;
+    --text-normal: #a0accc;
+    --text-muted: #72767d;
+    --text-link: #00b0f4;
+    --background-primary: #150a19;
+    --background-secondary: #1f1126;
+    --background-secondary-alt: #180621;
+    --background-tertiary: #1d0f24;
+    --background-accent: #ccaaff;
+    --channeltextarea-background: #1f1126;
+    --activity-card-background: #202225;
+
+    --scrollbar-auto-thumb: #8d67ce;
+    --scrollbar-auto-track: #3b1f51;
+    --scrollbar-auto-scrollbar-color-track: #2f3136;
+    --scrollbar-thin-thumb: var(--scrollbar-auto-track);
+    --background-accent: #8d67ce;
+    --brand-experiment: #c0a0f0;
+    --brand-experiment-560: #ae7fff;
+    --brand-experiment-600: #a172ff;
+}

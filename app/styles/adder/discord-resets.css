@@ -1,0 +1,109 @@
+.preview :where(a, button, div, input, label, select, span, strong, textarea) {
+    outline: 0;
+  }
+  
+  .preview
+    :where(a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, table, tbody, td, tfoot, th, thead, tr, tt, ul, var) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  
+  .theme-dark {
+    --brightness: calc(1.5 - var(--saturation-factor, 1) * 0.5);
+    --contrast: var(--saturation-factor, 1);
+    --header-primary: #fff;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: hsl(197, calc(var(--saturation-factor, 1) * 100%), 47.8%);
+    --background-primary: #36393f;
+    --background-secondary: #2f3136;
+    --background-secondary-alt: #292b2f;
+    --background-tertiary: #202225;
+  }
+  
+  .theme-light {
+    --brightness: calc(0.5 + var(--saturation-factor, 1) * 0.5);
+    --contrast: var(--saturation-factor, 1);
+    --header-primary: #060607;
+    --text-normal: #2e3338;
+    --text-muted: #747f8d;
+    --text-link: hsl(212, calc(var(--saturation-factor, 1) * 100%), 43.9%);
+    --background-primary: #fff;
+    --background-secondary: #f2f3f5;
+    --background-secondary-alt: #ebedef;
+    --background-tertiary: #e3e5e8;
+  }
+  
+  .preview {
+    --brand-experiment-200: hsl(
+      236,
+      calc(var(--saturation-factor, 1) * 83.3%),
+      92.9%
+    );
+    --brand-experiment: hsl(
+      235,
+      calc(var(--saturation-factor, 1) * 85.6%),
+      64.7%
+    );
+    --brand-experiment-530: hsl(
+      235,
+      calc(var(--saturation-factor, 1) * 66.7%),
+      58.8%
+    );
+    --brand-experiment-15a: hsla(
+      235,
+      calc(var(--saturation-factor, 1) * 85.6%),
+      64.7%,
+      0.15
+    );
+    --brand-experiment-30a: hsla(
+      235,
+      calc(var(--saturation-factor, 1) * 85.6%),
+      64.7%,
+      0.3
+    );
+  }
+  
+  .preview {
+    --font-primary: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display: Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+      "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+      "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+      monospace;
+    --font-headline: Ginto Nord, Ginto, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+  }
+  
+  .preview {
+    font-family: var(--font-primary);
+    text-rendering: optimizeLegibility;
+  }
+  
+  @font-face {
+    font-family: Whitney;
+    font-weight: 400;
+    src: url(fonts/whitney-400.woff2) format("woff2");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Whitney;
+    font-weight: 500;
+    src: url(fonts/whitney-500.woff2) format("woff2");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Whitney;
+    font-weight: 600;
+    src: url(fonts/whitney-600.woff2) format("woff2");
+    font-display: swap;
+  }
+  

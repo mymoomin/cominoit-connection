@@ -1,0 +1,283 @@
+/*
+ * You can just delete everything here or keep whatever you like, it's just a
+ * quick baseline!
+ */
+:root {
+  --color-foreground: hsl(0, 0%, 100%);
+  --color-background: hsl(0, 0%, 7%);
+  --color-links: hsl(213, 100%, 73%);
+  --color-links-hover: hsl(213, 100%, 80%);
+  --color-border: hsl(0, 0%, 25%);
+  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica, Roboto,
+  Arial, sans-serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+
+}
+
+:root {
+  --alert: hsl(335, 90%,40%);
+  --success: #70ce69;
+  --disabled: #ccc;
+  --header-primary: #c0a0f0;
+  --text-normal: #a0accc;
+  --text-muted: #72767d;
+  --text-link: #00b0f4;
+  --background-primary: #150a19;
+  --background-secondary: #1f1126;
+  --background-secondary-alt: #180621;
+  --background-tertiary: #1d0f24;
+  --background-accent: #ccaaff;
+  --channeltextarea-background: #1f1126;
+  --activity-card-background: #202225;
+
+  --scrollbar-auto-thumb: #8d67ce;
+  --scrollbar-auto-track: #3b1f51;
+  --scrollbar-auto-scrollbar-color-track: #2f3136;
+  --scrollbar-thin-thumb: var(--scrollbar-auto-track);
+  --background-accent: #8d67ce;
+  --brand-experiment: #c0a0f0;
+  --brand-experiment-560: #ae7fff;
+  --brand-experiment-600: #a172ff;
+}
+
+:root {
+  --nav-height: 3.5rem;
+  font-size: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/* :focus-visible {
+  outline: var(--header-primary) solid 2px;
+  outline-offset: 2px;
+} */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-primary);
+  color: var(--color-foreground);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.remix-app__header a {
+  color: inherit
+}
+
+.remix-app__header a:hover {
+  color: var(--brand-experiment-560)
+}
+
+.remix-app__header a:where(:focus, :active) {
+  color: var(--brand-experiment-600)
+}
+
+/* .remix-app__header a:focus-visible {
+  color: inherit
+} */
+
+a {
+  color: var(--color-links);
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-links-hover);
+  text-decoration: underline;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* input:where([type="text"]),
+input:where([type="search"]) {
+  display: block;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font: inherit;
+  line-height: 1;
+  height: calc(1ch + 1.5em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: hsl(0 0% 100% / 20%);
+  color: var(--color-foreground);
+} */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  --gutter: 16px;
+  width: 1024px;
+  max-width: calc(100% - var(--gutter) * 2);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.remix-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(100vh - env(safe-area-inset-bottom));
+}
+
+.remix-app > * {
+  width: 100%;
+}
+
+.remix-app__header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--background-secondary);
+  position: fixed;
+  z-index: 10;
+  color: var(--header-primary)
+}
+
+.remix-app__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.remix-app__header-home-link {
+  width: var(--nav-height);
+  height: var(--nav-height);
+  color: var(--header-primary);
+}
+
+.logo {
+  height: var(--nav-height);
+}
+
+.remix-app__header-nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.remix-app__header-nav li {
+  font-weight: bold;
+}
+
+.remix-app__main {
+  flex: 1 1 100%;
+  padding-top: calc(var(--nav-height));
+}
+
+.remix-app__footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.remix-app__footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remix__page {
+  --gap: 1rem;
+  --space: 2rem;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: var(--gap);
+  padding-top: var(--space);
+  padding-bottom: var(--space);
+}
+
+@media print, screen and (min-width: 640px) {
+  .remix__page {
+    --gap: 2rem;
+    grid-auto-rows: unset;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .remix__page {
+    --gap: 4rem;
+  }
+  header {
+    position: fixed;
+  }
+}
+
+.remix__page > main > :first-child {
+  margin-top: 0;
+}
+
+.remix__page > main > :last-child {
+  margin-bottom: 0;
+}
+
+.remix__page > aside {
+  margin: 0;
+  padding: 1.5ch 2ch;
+  border: solid 1px var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.remix__page > aside > :first-child {
+  margin-top: 0;
+}
+
+.remix__page > aside > :last-child {
+  margin-bottom: 0;
+}
+
+.remix__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.remix__form > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
