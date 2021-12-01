@@ -29,7 +29,7 @@ export let links: LinksFunction = () => {
 // https://remix.run/api/conventions#route-filenames
 export default function App() {
   return (
-    <Document title="RSS to Webhookss">
+    <Document title="ComiNoit Connection">
       <Layout>
         <Outlet />
       </Layout>
