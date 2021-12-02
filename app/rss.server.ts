@@ -1,5 +1,6 @@
 import htmlparser2 from "htmlparser2"
-import assert, {isEnum} from "~/my-assert"
+import assert, {areStrings, assertStrings, isEnum} from "~/my-assert"
+import { getCollection } from "~/database.server"
 
 type Feed = {
   "valid": true,
@@ -74,6 +75,7 @@ export async function checkFeed(feedUrl: string) : Promise<Feed | FeedError> {
 }
 
 export async function proposeComic(formData: FormData) {
+  console.log("hiii")
   const errors: ComicError = {}
 
   const feedUrl = formData.get("feedUrl")
@@ -109,8 +111,9 @@ export async function proposeComic(formData: FormData) {
   if (Object.keys(errors).length) {
     return errors
   } else {
-    //add to database
-    return
+    const comic = ({feedUrl, title, color, username, avatarUrl} as Comic)
+    const id = await addToDatabase(comic)
+    console.log("heyheyheyheyhey", id)
   }
 }
 
@@ -128,4 +131,20 @@ function getErrorMessage(feed: FeedError) {
     case ErrorReason.UKNOWN:
       return `Something went wrong. ${feed.message}. Please check the url.`
   }
+}
+
+type Comic = {
+  feedUrl: string,
+  title: string,
+  color?: string,
+  username?: string,
+  avatarUrl?: string,
+}
+
+export async function addToDatabase(comic: Comic): Promise<number> {
+  const potential_comics = await getCollection("potential_comics")
+  console.log(comic)
+  const id = await (await potential_comics.insertOne(comic)).insertedId
+  if (!id) throw "Whoops!"
+  return id
 }

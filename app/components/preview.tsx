@@ -1,7 +1,7 @@
 export type Theme = "dark" | "light"
 
 export type PreviewData = {
-  theme: Theme,
+  theme?: Theme,
   title?: string,
   avatarUrl?: string,
   username?: string,

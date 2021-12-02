@@ -7,12 +7,13 @@ import type { ChangeEvent, FormEvent, MouseEventHandler } from "react";
 import type { LoaderFunction } from "remix"
 import Preview, {Theme} from "~/components/preview";
 import type {PreviewData} from "~/components/preview";
-import { checkFeed, proposeComic } from "~/rss";
+import { addToDatabase, checkFeed, proposeComic } from "~/rss.server";
 import { useToggle } from "~/hooks";
 
 export let action: ActionFunction = async ({request}) => {
   const newComic = await request.formData();
   const errors = await proposeComic(newComic);
+  console.log("hi hello i exist")
   if (errors) {
     let values = Object.fromEntries(newComic);
     console.log(errors, "\n\n", values)
@@ -31,6 +32,7 @@ export let action: ActionFunction = async ({request}) => {
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
   const feedUrl = url.searchParams.get("feedurl");
+  // console.log(process.env.MONGODB_URI)
   if (feedUrl) {
     const feed = await checkFeed(feedUrl)
     return json(feed)
@@ -53,7 +55,6 @@ export function links() {
 
 export default function Page() {
   const [state, setState] = useState<PreviewData>({
-    theme: "dark",
     title: undefined,
     avatarUrl: undefined,
     username: undefined,
@@ -64,7 +65,6 @@ export default function Page() {
 
   const [theme, toggle] = useToggle(false)
 
-  console.log(theme)
   const themeName = theme ? "light" : "dark"
 
   const checkFeedUrl: MouseEventHandler = async (event) => {

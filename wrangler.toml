@@ -16,3 +16,6 @@ watch_dir = "build/index.js"
 
 [build.upload]
 format="service-worker"
+
+[miniflare]
+env_path = ".env"
