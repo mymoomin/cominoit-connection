@@ -75,7 +75,6 @@ export async function checkFeed(feedUrl: string) : Promise<Feed | FeedError> {
 }
 
 export async function proposeComic(formData: FormData) {
-  console.log("hiii")
   const errors: ComicError = {}
 
   const feedUrl = formData.get("feedUrl")
@@ -113,7 +112,7 @@ export async function proposeComic(formData: FormData) {
   } else {
     const comic = ({feedUrl, title, color, username, avatarUrl} as Comic)
     const id = await addToDatabase(comic)
-    console.log("heyheyheyheyhey", id)
+    console.log(id)
   }
 }
 
@@ -143,7 +142,6 @@ type Comic = {
 
 export async function addToDatabase(comic: Comic): Promise<number> {
   const potential_comics = await getCollection("potential_comics")
-  console.log(comic)
   const id = await (await potential_comics.insertOne(comic)).insertedId
   if (!id) throw "Whoops!"
   return id
